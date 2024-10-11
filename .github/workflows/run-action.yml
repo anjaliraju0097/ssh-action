@@ -1,0 +1,19 @@
+name: Run Custom Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Custom Action
+        uses: ./ 
+        with:
+          example_input: 'Hello, World!'  
